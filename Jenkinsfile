@@ -24,7 +24,11 @@ pipeline{
                 script {
                 
                 env.abc = currentBuild.durationString.split("and counting")[0]
+                clearWs()
                 sh 'ls -la'
+                checkout scm
+                sh 'ls -la'
+                
                 echo "#############Build USER########################"
                 wrap([$class:'BuildUser']) {
                     echo "${BUILD_USER}"
