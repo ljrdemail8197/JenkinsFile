@@ -26,7 +26,7 @@ pipeline{
                 script {
                 
                 env.abc = currentBuild.durationString.split("and counting")[0]
-              
+                sh "ls-la"
                 echo "#############Build USER########################"
                 wrap([$class:'BuildUser']) {
                     echo "${BUILD_USER}"
