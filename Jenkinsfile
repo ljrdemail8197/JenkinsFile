@@ -26,7 +26,7 @@ pipeline{
                 env.abc = currentBuild.durationString.split("and counting")[0]
                 cleanWs() 
                 sh 'ls -la'
-                Checkout scm
+                checkout scm
                 sh 'ls -la'
                 
                 echo "#############Build USER########################"
