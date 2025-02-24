@@ -19,14 +19,12 @@ pipeline{
        
     }
     stages {
-        stage("git clone") {
-            
-            steps{
-               
+        stage("git clone") {      
+            steps{        
                 script {
                 
                 env.abc = currentBuild.durationString.split("and counting")[0]
-                sh "ls-la"
+                sh 'ls -la'
                 echo "#############Build USER########################"
                 wrap([$class:'BuildUser']) {
                     echo "${BUILD_USER}"
